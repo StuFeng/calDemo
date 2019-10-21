@@ -55,6 +55,12 @@ public class LinkedListNode<T> {
         }
     }
 
+    /**
+     * 获取链表的第i个值
+     *
+     * @param i
+     * @return
+     */
     T get(int i) {
         if (i < 0 || i > size) {
             throw new ArrayIndexOutOfBoundsException("插入的位置不合法");
@@ -107,13 +113,13 @@ public class LinkedListNode<T> {
     }
 
     /**
-     * 反向删除
+     * 获取该链表的倒数第k个值
      *
      * @param k
      */
     T reverseGet(int k) {
         if (k < 0 || k > size) {
-            throw new ArrayIndexOutOfBoundsException("删除的位置不合法");
+            throw new ArrayIndexOutOfBoundsException("节点数不对");
         } else {
             int index = 0;
             Node tmp = head;
@@ -192,4 +198,6 @@ public class LinkedListNode<T> {
             }
         }
     }
+
+
 }
