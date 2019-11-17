@@ -13,22 +13,18 @@ public class BST {
      * @param sequence
      * @return
      */
-    static boolean verifySequenceOfBST(int[] sequence, int leftIndex, int length) {
-        if (sequence == null || length <= 0) {
+    static boolean verifySequenceOfBST(int[] sequence, int leftIndex, int rightIndex) {
+        if (sequence == null) {
             return false;
         }
 
-        if (length == 1) {
-            return true;
-        }
-
         // 二叉树后续遍历根节点
-        int root = sequence[leftIndex + length - 1];
+        int root = sequence[rightIndex];
 
         // 二叉搜索树中左子树的节点值小于根节点的值
         // 确定左子树的位置
         int i = leftIndex;
-        for (; i < length; i++) {
+        for (; i < rightIndex; i++) {
             if (sequence[i] > root) {
                 break;
             }
@@ -36,7 +32,7 @@ public class BST {
 
         // 确定右子树的位置
         int j = i;
-        for (; j < length; j++) {
+        for (; j < rightIndex; j++) {
             // 发现小于根节点则不是搜索树序列
             if (sequence[j] < root) {
                 return false;
@@ -45,23 +41,23 @@ public class BST {
 
         boolean left = true;
         // 处理左子树
-        if (i > 0) {
-            left = verifySequenceOfBST(sequence, 0, i);
+        if (i > leftIndex) {
+            left = verifySequenceOfBST(sequence, leftIndex, i - 1);
         }
 
         boolean right = true;
-        if (i < length - 1) {
-            right = verifySequenceOfBST(sequence, i, length - i - 1);
+        if (i < rightIndex) {
+            right = verifySequenceOfBST(sequence, i, rightIndex - 1);
         }
 
         return (left && right);
     }
 
     public static void main(String[] args) {
-//        int[] aa = new int[]{5, 7, 6, 9, 11, 10, 8};
-//        boolean b = verifySequenceOfBST(aa, 0, 7);
-        int[] aa = new int[]{7, 4, 6, 5};
-        boolean b = verifySequenceOfBST(aa, 0, 4);
+        int[] aa = new int[]{5, 8, 7, 11, 13, 12, 10};
+        boolean b = verifySequenceOfBST(aa, 0, 6);
+//        int[] aa = new int[]{7, 4, 6, 5};
+//        boolean b = verifySequenceOfBST(aa, 0, 4);
         System.out.println(b);
 
     }
