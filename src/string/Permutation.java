@@ -88,6 +88,7 @@ public class Permutation {
      * @param str
      * @param index 定义当前遍历的数组起始下标
      * @param m     当前字符组合个数
+     * @param result 存放结果值
      */
     public static void combination1(char[] str, int index, int m, ArrayList<Character> result) {
         if (str == null || str.length == 0) {
@@ -104,7 +105,7 @@ public class Permutation {
         result.add(str[index]);
         int tmp = index + 1;
         combination1(str, tmp, m - 1, result);
-        // 当前字符未被选中，穷举
+        // 当前字符未被选中，穷举所有情况
         result.remove(result.size() - 1);
         combination1(str, tmp, m, result);
     }
