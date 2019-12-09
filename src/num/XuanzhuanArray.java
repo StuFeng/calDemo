@@ -47,5 +47,8 @@ public class XuanzhuanArray {
     public static void main(String[] args) {
         System.out.println(min(new int[]{1,0,1,1,1}));
         System.out.println(min(new int[]{3,4,5,1,2}));
+
+        double sqrt = Math.sqrt(10);
+        System.out.println(sqrt);
     }
 }
