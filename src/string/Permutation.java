@@ -43,8 +43,30 @@ public class Permutation {
 //        printPermutation(aa);
 
         char[] str = new char[]{'a', 'b', 'c'};
-//        permutation(str, 0);
+//        permutation1(str, 0);
         combination(str);
+    }
+
+    /**
+     *
+     * @param str
+     * @param index 代表当前寻找的下标,当下标等于最后一位的时候打印数组
+     */
+    public static void permutation1(char[] str, int index){
+        if (index == str.length -1){
+            System.out.println(Arrays.toString(str));
+        }else{
+            for (int i = index;i<str.length;i++){
+                char tmp = str[index];
+                str[index] = str[i];
+                str[i] = tmp;
+                permutation1(str, index +1 );
+
+                tmp = str[index];
+                str[index] = str[i];
+                str[i] = tmp;
+            }
+        }
     }
 
     /**
@@ -63,6 +85,7 @@ public class Permutation {
             System.out.println(Arrays.toString(str));
         } else {
             for (int i = index; i < str.length; i++) {
+                //
                 char tmp = str[i];
                 str[i] = str[index];
                 str[index] = tmp;
@@ -77,6 +100,11 @@ public class Permutation {
 
     }
 
+    /**
+     * 输出所有组合
+     *
+     * @param str
+     */
     public static void combination(char[] str) {
         ArrayList<Character> result = new ArrayList<>();
         for (int i = 1; i <= str.length; i++)
@@ -87,7 +115,7 @@ public class Permutation {
     /**
      * @param str
      * @param index 定义当前遍历的数组起始下标
-     * @param m     当前字符组合个数
+     * @param m     当前字符组合个数 需要输出的字符组合个数
      * @param result 存放结果值
      */
     public static void combination1(char[] str, int index, int m, ArrayList<Character> result) {

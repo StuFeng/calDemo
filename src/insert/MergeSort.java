@@ -34,7 +34,7 @@ public class MergeSort {
     private static void merge(int[] aa, int[] tmp, int leftPos, int rightPos, int rightEnd) {
         int leftEnd = rightPos - 1;
         int tmpPos = leftPos;
-        int numElements = rightEnd - leftPos + 1;
+        int numElements = rightEnd - leftPos + 1; // 涉及到的所有元素
 
         // 循环比较两个队列中的值
         while (leftPos <= leftEnd && rightPos <= rightEnd) {
@@ -54,8 +54,7 @@ public class MergeSort {
         }
 
         /**
-         * 为啥要从rightEnd开始呢 ，因为当结束为小数，比如1，2时，
-         * 为了不影响后面的值，后面的值还未发生变化
+         * 将排好序的临时数组，按照排序的前后下标, 赋值给最终的数组
          *
          */
         for(int i=0;i<numElements;i++, rightEnd--){
@@ -65,7 +64,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         long stime = System.currentTimeMillis();
-        int[] sort = new int []{9,8,7,6,5,4,3,2,1,0};
+        int[] sort = new int []{9,1,7,5,5,4,3,2,1,0};
         mergeSort(sort);
         System.out.println(Arrays.toString(sort));
         long etime = System.currentTimeMillis();

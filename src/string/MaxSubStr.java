@@ -79,9 +79,11 @@ public class MaxSubStr {
             // 定位之前是否存在当前字符
             int preIdx = array[str1.charAt(i) - 'a'];
 
-            // 如果定位到了之前的值，判断长度是否比当前长度大，
-            // 如果大于说明之前的值对当前没有影响
-            if (preIdx < 0 || i - preIdx > curLen) {
+            if (// 没有定位到
+                preIdx < 0
+                // 如果定位到了之前的值，判断长度是否比当前长度大，
+                // 如果大于说明之前的值对当前长度没有影响
+                || i - preIdx > curLen) {
                 ++curLen;
             }else{
                 if (curLen > maxLen){
@@ -105,5 +107,7 @@ public class MaxSubStr {
     public static void main(String[] args) {
         Integer len = maxSubStrWithoutDup("arabcacfr");
         System.out.println(len);
+
+        System.out.println(maxUtil2("abcdea", "deacb"));;
     }
 }

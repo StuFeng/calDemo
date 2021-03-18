@@ -38,6 +38,7 @@ public class MaxProductAfterCutting {
                 }
             }
             products[i] = max;
+            System.out.println("找出每个长度的最优解: i:" + i + " max:" + max);
 
         }
 

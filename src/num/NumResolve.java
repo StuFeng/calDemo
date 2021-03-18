@@ -11,7 +11,7 @@ import java.util.List;
 public class NumResolve {
 
     /**
-     * 从m个数子中去n个数字组合起来
+     * 从m个数子中 取n个数字组合起来
      */
     public static void getResult(int[] m, int n) {
         List<Integer> list = new ArrayList<>();

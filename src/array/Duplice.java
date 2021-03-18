@@ -31,7 +31,7 @@ public class Duplice {
     }
 
     /**
-     * 在二位数组中找到一个数组的步骤
+     * 在二位数组中找到一个数 的步骤
      */
     public static void find(int[][] aa, int number) {
         if (aa == null || aa.length == 0){
@@ -59,6 +59,6 @@ public class Duplice {
 
         int[][] arr1 = {{1, 2, 8, 9}, {2, 3, 9, 12}, {4, 7, 10, 13}, {6, 8, 10, 15}};
         int[][] arr11 = {{1}};
-        find(arr11, 16);
+        find(arr1, 13);
     }
 }
