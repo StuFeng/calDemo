@@ -36,13 +36,13 @@ public class PrintTree {
     }
 
     public static void main(String[] args) {
-//        BinaryTreeNode<String> R3 = new BinaryTreeNode<>("F", null, null);
-//        BinaryTreeNode<String> L2 = new BinaryTreeNode<>("D", null, null);
-//        BinaryTreeNode<String> R2 = new BinaryTreeNode<>("E", null, R3);
-//        BinaryTreeNode<String> L1 = new BinaryTreeNode<>("B", L2, R2);
-//        BinaryTreeNode<String> R1 = new BinaryTreeNode<>("C", null, null);
-//        BinaryTreeNode<String> T = new BinaryTreeNode<>("A", L1, R1);
-//        printFromTopToBottom(T);
+        BinaryTreeNode<String> R3 = new BinaryTreeNode<>("F", null, null);
+        BinaryTreeNode<String> L2 = new BinaryTreeNode<>("D", null, null);
+        BinaryTreeNode<String> R2 = new BinaryTreeNode<>("E", null, R3);
+        BinaryTreeNode<String> L1 = new BinaryTreeNode<>("B", L2, R2);
+        BinaryTreeNode<String> R1 = new BinaryTreeNode<>("C", null, null);
+        BinaryTreeNode<String> T = new BinaryTreeNode<>("A", L1, R1);
+        printFromTopToBottom(T);
 
     }
 }
