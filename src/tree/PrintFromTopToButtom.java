@@ -17,7 +17,6 @@ public class PrintFromTopToButtom {
         queue.add(node);
         while (queue.size() != 0){
             int size = queue.size();
-            int leftFirstIndex = size;
             while (size > 0){
                 BinaryTreeNode node1 = queue.poll();
                 // 左视图
@@ -42,6 +41,43 @@ public class PrintFromTopToButtom {
         System.out.println();
     }
 
+    static int printFromTopToBottom(BinaryTreeNode<String> node, int k){
+        // 先入先出队列
+        Queue<BinaryTreeNode> queue = new ArrayDeque<>();
+        queue.add(node);
+
+        if (k<=0){
+            return 0;
+        }
+
+        while (k>0){
+            int size = queue.size();
+            if (k==1){
+                return size;
+            }
+            while (size > 0){
+                BinaryTreeNode node1 = queue.poll();
+                // 左视图
+//                if (leftFirstIndex == size){
+//                    System.out.print(node1.getData());
+//                }
+                // 所有遍历
+//                System.out.print(node1.getData());
+
+                // 一行打印
+                if (node1.getLeftNode() != null){
+                    queue.add(node1.getLeftNode());
+                }
+                if (node1.getRightNode() != null){
+                    queue.add(node1.getRightNode());
+                }
+                size --;
+            }
+           k--;
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         BinaryTreeNode<String> R3 = new BinaryTreeNode<>("F", null, null);
         BinaryTreeNode<String> L2 = new BinaryTreeNode<>("D", null, null);
@@ -54,5 +90,6 @@ public class PrintFromTopToButtom {
         BinaryTreeNode<String> R1 = new BinaryTreeNode<>("C", L3, R4);
         BinaryTreeNode<String> T = new BinaryTreeNode<>("A", L1, R1);
         printFromTopToBottom(T);
+        System.out.println(printFromTopToBottom(T, 3));;
     }
 }

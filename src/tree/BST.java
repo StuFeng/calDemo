@@ -46,6 +46,7 @@ public class BST {
         }
 
         boolean right = true;
+        //  存在右子树
         if (i < rightIndex) {
             right = verifySequenceOfBST(sequence, i, rightIndex - 1);
         }

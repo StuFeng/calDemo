@@ -15,6 +15,7 @@ public class NumResolve {
      */
     public static void getResult(int[] m, int n) {
         List<Integer> list = new ArrayList<>();
+        // 第一个值可以取到 endIdx值
         printf(m, 0, m.length - n + 1, n, list);
     }
 
@@ -26,8 +27,7 @@ public class NumResolve {
                 list.add(m[i]);
                 // 输出下面的值
                 printf(m, startIdx + 1, endIdx + 1, n, list);
-                // 删除当前值
-                list.remove(list.size() - 1);
+                list.remove(list.size() - 1);// 最后一列的值
             }
         }
     }

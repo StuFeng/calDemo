@@ -22,6 +22,7 @@ public class PrintTree {
         // 初始化queue
         Queue<BinaryTreeNode> queue = new ArrayDeque<>();
         queue.add(root);
+
         while (queue.peek() != null){
             BinaryTreeNode node = queue.poll();
             System.out.print(node.getData());

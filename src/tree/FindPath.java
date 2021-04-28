@@ -50,11 +50,12 @@ public class FindPath {
         }
 
         if (node.getLeftNode() != null) {
-            findPath(node.getLeftNode(), expectedSum, stack, currentSum);
+            findPath(node.getLeftNode(), expectedSum, stack, currentSum);//
         }
         if (node.getRightNode() != null) {
             findPath(node.getRightNode(), expectedSum, stack, currentSum);
         }
+
         stack.pop();
     }
 

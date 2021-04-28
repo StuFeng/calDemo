@@ -196,7 +196,7 @@ public class BinaryTree {
             // 如果当前节点不为空，则输出节点的值，因为当前节点都被当作了左节点
             if (p != null) {
                 System.out.print(p.getData());
-                // 为啥需要添加到栈中？
+                // 为啥需要添加到栈中？ 遍历完根节点后，遍历右子节点
                 stack.push(p);
                 p = p.getLeftNode();
             }

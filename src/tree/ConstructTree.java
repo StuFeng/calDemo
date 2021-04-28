@@ -26,8 +26,8 @@ public class ConstructTree {
     /**
      * 将数组分段进行处理
      *
-     * @param preOrder
-     * @param inOrder
+     * @param preOrder 前序 对应处理的下标范围
+     * @param inOrder 中序 对应处理的下标范围
      * @return
      */
     public static BinaryTreeNode ConstructCore(int[] preOrder, int[] inOrder,
@@ -57,7 +57,7 @@ public class ConstructTree {
 
         // 左子树长度
         int leftLength = rootInOrder - inStartIndex;
-        // 左子树的下表范围
+        // 左子树的下标范围
         int leftPreEndIndex = preStartIndex + leftLength;
 
         // 存在左子树
@@ -66,7 +66,7 @@ public class ConstructTree {
             root.setLeftNode(ConstructCore(preOrder, inOrder,
                     preStartIndex + 1, leftPreEndIndex, inStartIndex, rootInOrder - 1));
         }
-        // 存在右子树
+        // 存在右子树  整体长度
         if (leftLength < (preEndIndex - preStartIndex)) {
             root.setRightNode(ConstructCore(preOrder, inOrder,
                     leftPreEndIndex + 1, preEndIndex, rootInOrder + 1, inEndIndex));

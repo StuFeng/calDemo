@@ -42,7 +42,7 @@ public class Permutation {
 //        int[] aa = {1, 2, 2, 4};
 //        printPermutation(aa);
 
-        char[] str = new char[]{'a', 'b', 'c'};
+        char[] str = new char[]{'a', 'b', 'c', 'd'};
 //        permutation1(str, 0);
         combination(str);
     }
@@ -107,9 +107,9 @@ public class Permutation {
      */
     public static void combination(char[] str) {
         ArrayList<Character> result = new ArrayList<>();
-        for (int i = 1; i <= str.length; i++)
+//        for (int i = 1; i <= str.length; i++)
             // n个字符， m中情况
-            combination1(str, 0, i, result);
+            combination1(str, 0, 3, result);
     }
 
     /**

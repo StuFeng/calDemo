@@ -18,13 +18,13 @@ public class Solution {
         ListNode listNode = new ListNode("a");
         ListNode listNode1 = new ListNode("b");
         ListNode listNode2 = new ListNode("c");
-        ListNode listNode3 = new ListNode("b");
+        ListNode listNode3 = new ListNode("a");
         ListNode listNode4 = new ListNode("a");
         listNode.next = listNode1;
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
-        System.out.println(listNode);
+//        System.out.println(listNode);
 //        System.out.println(reverse(listNode));
 
 
@@ -100,6 +100,8 @@ public class Solution {
             slowNode = slowNode.next;
         }
 
+        // slowNode 走到中间节点
+
         // 反转链表
 //        ListNode reverse = reverse(slowNode.next);
 //
@@ -114,7 +116,7 @@ public class Solution {
     }
 
 
-    static ListNode1 reverse(ListNode1 head) {
+    static final ListNode1 reverse(ListNode1 head) {
         ListNode1 tmp = head;
 
         ListNode1 lastNode = null;

@@ -3,7 +3,7 @@ package array;
 import java.util.Arrays;
 
 /**
- * @description:
+ * @description: 计算数组除一个数字外的其他乘积
  * @author: fengsihan
  * @time: 2021-04-08 19:25
  */
